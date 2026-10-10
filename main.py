@@ -1,8 +1,11 @@
-def addtask(k):
+def addtask():
+    with open("task.txt", "r") as f:
+        k = len(f.readlines()) + 1
+            
     with open("task.txt", "a") as tasks:
-        k = k+1
-        task = input("write a task to do:")
-        tasks.write(str(k) + task+"Pnd\n")
+        task = input("Write a task to do: ")
+        tasks.write(f"{k}. {task} - [Pending]\n")
+    print("Task added successfully.")
 
 
 def displaytask():
